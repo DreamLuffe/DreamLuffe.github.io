@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>串 | luffy博客</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我是睡了，你也差不多该醒了吧">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.d8a7e94a.js" as="script"><link rel="preload" href="/assets/js/4.6227a905.js" as="script"><link rel="preload" href="/assets/js/1.9ff3b7f0.js" as="script"><link rel="preload" href="/assets/js/23.82b20791.js" as="script"><link rel="prefetch" href="/assets/js/10.cc0da900.js"><link rel="prefetch" href="/assets/js/11.424d0126.js"><link rel="prefetch" href="/assets/js/12.64260b67.js"><link rel="prefetch" href="/assets/js/13.c1c6aee3.js"><link rel="prefetch" href="/assets/js/14.6f2b50e3.js"><link rel="prefetch" href="/assets/js/15.1a9ff8ee.js"><link rel="prefetch" href="/assets/js/16.cb50a692.js"><link rel="prefetch" href="/assets/js/17.dfa546b0.js"><link rel="prefetch" href="/assets/js/18.d7fcd772.js"><link rel="prefetch" href="/assets/js/19.9b1b442c.js"><link rel="prefetch" href="/assets/js/20.ad9df449.js"><link rel="prefetch" href="/assets/js/21.82c07026.js"><link rel="prefetch" href="/assets/js/22.a82097c2.js"><link rel="prefetch" href="/assets/js/24.4e6d5ad1.js"><link rel="prefetch" href="/assets/js/25.d322cf9b.js"><link rel="prefetch" href="/assets/js/26.0092e9b8.js"><link rel="prefetch" href="/assets/js/27.5118de78.js"><link rel="prefetch" href="/assets/js/28.f52fbe57.js"><link rel="prefetch" href="/assets/js/29.73497840.js"><link rel="prefetch" href="/assets/js/3.a8ec120a.js"><link rel="prefetch" href="/assets/js/30.f1507212.js"><link rel="prefetch" href="/assets/js/31.f7f0ab2c.js"><link rel="prefetch" href="/assets/js/32.c839405d.js"><link rel="prefetch" href="/assets/js/33.afa163c4.js"><link rel="prefetch" href="/assets/js/34.210c0454.js"><link rel="prefetch" href="/assets/js/35.64c55af9.js"><link rel="prefetch" href="/assets/js/36.a7e7bf32.js"><link rel="prefetch" href="/assets/js/37.0094586f.js"><link rel="prefetch" href="/assets/js/38.c6769535.js"><link rel="prefetch" href="/assets/js/39.4d861cf5.js"><link rel="prefetch" href="/assets/js/40.27ced136.js"><link rel="prefetch" href="/assets/js/41.c56946df.js"><link rel="prefetch" href="/assets/js/42.d5937388.js"><link rel="prefetch" href="/assets/js/43.27b03cdf.js"><link rel="prefetch" href="/assets/js/44.d2473dff.js"><link rel="prefetch" href="/assets/js/45.20f53322.js"><link rel="prefetch" href="/assets/js/46.7b33890e.js"><link rel="prefetch" href="/assets/js/47.245a8645.js"><link rel="prefetch" href="/assets/js/48.e72e22c6.js"><link rel="prefetch" href="/assets/js/49.b2f9a673.js"><link rel="prefetch" href="/assets/js/5.6c0e3380.js"><link rel="prefetch" href="/assets/js/50.b7ffa814.js"><link rel="prefetch" href="/assets/js/51.4d20e5b1.js"><link rel="prefetch" href="/assets/js/52.38157b82.js"><link rel="prefetch" href="/assets/js/53.0c88ef20.js"><link rel="prefetch" href="/assets/js/54.5b5983a9.js"><link rel="prefetch" href="/assets/js/55.7cdd188a.js"><link rel="prefetch" href="/assets/js/56.8e45ff1f.js"><link rel="prefetch" href="/assets/js/57.9ba48f9f.js"><link rel="prefetch" href="/assets/js/58.37dc388f.js"><link rel="prefetch" href="/assets/js/59.ab3f1f4b.js"><link rel="prefetch" href="/assets/js/6.af89627e.js"><link rel="prefetch" href="/assets/js/60.02decc24.js"><link rel="prefetch" href="/assets/js/61.c17fb34b.js"><link rel="prefetch" href="/assets/js/62.cef065fa.js"><link rel="prefetch" href="/assets/js/63.8f425581.js"><link rel="prefetch" href="/assets/js/64.1f2bd166.js"><link rel="prefetch" href="/assets/js/65.20ff19a7.js"><link rel="prefetch" href="/assets/js/66.5b5d9a2e.js"><link rel="prefetch" href="/assets/js/67.1d2cbe49.js"><link rel="prefetch" href="/assets/js/68.3a8078b7.js"><link rel="prefetch" href="/assets/js/69.7b63e64e.js"><link rel="prefetch" href="/assets/js/7.056202dc.js"><link rel="prefetch" href="/assets/js/70.09b9295b.js"><link rel="prefetch" href="/assets/js/71.2a79b3c8.js"><link rel="prefetch" href="/assets/js/72.da3bff7f.js"><link rel="prefetch" href="/assets/js/73.3d7b1c2e.js"><link rel="prefetch" href="/assets/js/74.a56e4e16.js"><link rel="prefetch" href="/assets/js/75.ac91acae.js"><link rel="prefetch" href="/assets/js/76.665afc87.js"><link rel="prefetch" href="/assets/js/77.1fd07fb6.js"><link rel="prefetch" href="/assets/js/78.a5bb0631.js"><link rel="prefetch" href="/assets/js/79.7475fa56.js"><link rel="prefetch" href="/assets/js/8.527f07c3.js"><link rel="prefetch" href="/assets/js/80.e07968a2.js"><link rel="prefetch" href="/assets/js/81.897e2ffd.js"><link rel="prefetch" href="/assets/js/82.95068134.js"><link rel="prefetch" href="/assets/js/83.544bbac2.js"><link rel="prefetch" href="/assets/js/84.202564a4.js"><link rel="prefetch" href="/assets/js/85.048332e5.js"><link rel="prefetch" href="/assets/js/86.7d1001f2.js"><link rel="prefetch" href="/assets/js/87.c8340e47.js"><link rel="prefetch" href="/assets/js/88.7acd59a0.js"><link rel="prefetch" href="/assets/js/89.9a7e81cd.js"><link rel="prefetch" href="/assets/js/9.247c2070.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>luffy博客</h3> <p class="description" data-v-59e6cb88>我是睡了，你也差不多该醒了吧</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="luffy博客" class="logo"> <span class="site-name">luffy博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    luffy
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>78</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>30</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><a href="/blogs/dataStructure/" aria-current="page" class="sidebar-link">theme-reco</a></li><li><a href="/blogs/dataStructure/sparseArray.html" class="sidebar-link">稀疏数组</a></li><li><a href="/blogs/dataStructure/arrayQueue.html" class="sidebar-link">数组队列</a></li><li><a href="/blogs/dataStructure/linkedList.html" class="sidebar-link">链表</a></li><li><a href="/blogs/dataStructure/stack.html" class="sidebar-link">栈</a></li><li><a href="/blogs/dataStructure/bunch.html" aria-current="page" class="active sidebar-link">串</a></li><li><a href="/blogs/dataStructure/tree.html" class="sidebar-link">树(Tree)</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>串</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">串</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>luffy</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>11/9/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>data-structure</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="串"><a href="#串" class="header-anchor">#</a> 串</h1> <h2 id="一、串的定义"><a href="#一、串的定义" class="header-anchor">#</a> 一、串的定义</h2> <p>串( string)是由零个或多个字符组成的有限序列，又名叫字符串。</p> <h2 id="二、串的存储结构"><a href="#二、串的存储结构" class="header-anchor">#</a> 二、串的存储结构</h2> <h3 id="_1、定长顺序存储表示"><a href="#_1、定长顺序存储表示" class="header-anchor">#</a> 1、定长顺序存储表示</h3> <p>类似于线性表的顺序存储结构，用一组地址连续的存储单元存储串值的字符序列。在串的定长顺序存储结构中，为每个串变量分配一个固定长度的存储区，即定长数组。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAXLEN</span> <span class="token expression"><span class="token number">255</span> </span><span class="token comment">//预定义最大串长为255</span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+ <span class="token keyword">char</span> ch<span class="token punctuation">[</span>MAXLEN<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//每个分量存储一个字符</span>
+ <span class="token keyword">int</span> length<span class="token punctuation">;</span> <span class="token comment">//串的实际长度</span>
+<span class="token punctuation">}</span>SString<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="_2、堆分配存储表示"><a href="#_2、堆分配存储表示" class="header-anchor">#</a> 2、堆分配存储表示</h3> <p>堆分配存储表示仍然以一组地址连续的存储单元存放串值的字符序列，但它们的存储空间是在程序执行过程中动态分配得到的。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+ <span class="token keyword">char</span> <span class="token operator">*</span>ch<span class="token punctuation">;</span> <span class="token comment">//按串长分配存储区，ch指向串的基地址</span>
+ <span class="token keyword">int</span> length<span class="token punctuation">;</span> <span class="token comment">//串的长度</span>
+<span class="token punctuation">}</span>HString<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="_3、块链存储表示"><a href="#_3、块链存储表示" class="header-anchor">#</a> 3、块链存储表示</h3> <p>类似于线性表的链式存储结构，也可采用链表方式存储串值。由于串的特殊性(每个元素只有一个字符)，在具体实现时，每个结点既可以存放一个字符， 也可以存放多个字符。每个结点称为块，整个链表称为块链结构。图(a)是结点大小为4 (即每个结点存放4个字符)的链表,最后一个结点占不满时通常用“#”补上;图(b)是结点大小为1的链表。</p> <h2 id="三、串的基本操作"><a href="#三、串的基本操作" class="header-anchor">#</a> 三、串的基本操作</h2> <ul><li>StrAssign(&amp;T, chars): 赋值操作。把串T赋值为 chars</li> <li>Strcopy(&amp;T, S): 复制操作。由串S复制得到串T。</li> <li>StrEmpty(S): 判空操作。若S为空串,则返回TRUE,否则返回 FALSE</li> <li>StrCompare(S,T): 比较操作。若S&gt;T,则返回值&gt;0;若S=T,则返回值=0;若S&lt;T,则返回值&lt;0。</li> <li>StrEngth(S): 求串长。返回串S的元素个数</li> <li>Substring(&amp;Sub,S,pos,1en):求子串。用Sub返回串S的第pos个字符起长度为len的子串。</li> <li>Concat(&amp;T,S1,S2): 串联接。用T返回由S1和S2联接而成的新串。</li> <li>Index(S,T): 定位操作。若主串S中存在与串T值相同的子串,则返回它在主串S中第一次出现的位置;否则函数值为0</li> <li>Clearstring(&amp;S): 清空操作。将S清为空串</li> <li>Destroystring(&amp;S): 销毁串。将串S销毁</li></ul> <h2 id="四、串的模式匹配-重点"><a href="#四、串的模式匹配-重点" class="header-anchor">#</a> 四、串的模式匹配（重点）</h2> <h3 id="_1、简单的模式匹配算法"><a href="#_1、简单的模式匹配算法" class="header-anchor">#</a> 1、简单的模式匹配算法</h3> <p>子串的定位操作通常称为串的模式匹配，它求的是子串(常称模式串)在主串中的位置。这里采用定长顺序存储结构，给出一种不依赖于其他串操作的暴力匹配算法。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">int</span> <span class="token function">Index</span><span class="token punctuation">(</span>SString S<span class="token punctuation">,</span> SString T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+ <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> S<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;=</span> T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>S<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">;</span> <span class="token comment">//继续比较后继字符</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+   <span class="token comment">//指针后退重新开始匹配</span>
+   i <span class="token operator">=</span> i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">;</span>
+   j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>j <span class="token operator">&gt;</span> T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> i <span class="token operator">-</span> T<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><img src="/assets/img/bunch01.7f0ced6c.gif"> <h3 id="_2、kmp算法"><a href="#_2、kmp算法" class="header-anchor">#</a> 2、KMP算法</h3> <blockquote><p>在上面的简单匹配中，每趟匹配失败都是模式后移一位再从头开始比较。</p></blockquote> <p>KMP算法的特点就是：<code>仅仅后移模式串，比较指针不回溯</code>。很是牛掰。</p> <p>KMP的方法: 利用子串的next数组, 得出在主串某个位置失配时, 主串指针不动, 子串滑动的距离(通常叫做字串指针回溯, 但这里叫子串滑动更直观易懂)</p> <img src="/assets/img/bunch02.bb8efb47.gif"> <p>求next数组</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">void</span> <span class="token function">get_next</span><span class="token punctuation">(</span>String T<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ next<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">||</span> T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//ch[i]表示后缀的单个字符，ch[j]表示前缀的单个字符</span>
+   <span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
+   next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span> <span class="token comment">//若pi = pj， 则next[j+1] = next[j] + 1</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+   j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//否则令j = next[j]，j值回溯，循环继续</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>kmp算法代码</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">int</span> <span class="token function">Index_KMP</span><span class="token punctuation">(</span>String S<span class="token punctuation">,</span> String T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+ <span class="token keyword">int</span> next<span class="token punctuation">[</span><span class="token number">255</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//定义next数组</span>
+ <span class="token function">get_next</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//得到next数组</span>
+ <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span>S<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> j<span class="token operator">&lt;=</span>T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">||</span> S<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//字符相等则继续</span>
+   <span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+   j <span class="token operator">=</span> next<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//模式串向右移动，i不变</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">&gt;</span>T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> i<span class="token operator">-</span>T<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token comment">//匹配成功</span>
+ <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="kmp算法的进一步优化"><a href="#kmp算法的进一步优化" class="header-anchor">#</a> KMP算法的进一步优化</h3> <img src="/assets/img/bunch03.6f4fbf24.gif"> <p>使用get_nextval 代替 next</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">void</span> <span class="token function">get_nextval</span><span class="token punctuation">(</span>String T<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>nextval<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ nextval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> T<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">||</span> T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//ch[i]表示后缀的单个字符，ch[j]表示前缀的单个字符</span>
+   <span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> T<span class="token punctuation">.</span>ch<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//若当前字符与前缀字符不同</span>
+    nextval<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span> <span class="token comment">//则当前的j为nextval在i位置的值</span>
+   <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token comment">//如果与前缀字符相同</span>
+    <span class="token comment">//则将前缀字符的nextval值给nextval在i位置上的值</span>
+    nextval<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nextval<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+   j <span class="token operator">=</span> nextval<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//否则令j = next[j]，j值回溯，循环继续</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/10/2023, 11:47:31 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/dataStructure/stack.html" class="prev">
+          栈
+        </a></span> <span class="next"><a href="/blogs/dataStructure/tree.html">
+          树(Tree)
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#一、串的定义" class="sidebar-link reco-side-一、串的定义" data-v-b57cc07c>一、串的定义</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#二、串的存储结构" class="sidebar-link reco-side-二、串的存储结构" data-v-b57cc07c>二、串的存储结构</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#_1、定长顺序存储表示" class="sidebar-link reco-side-_1、定长顺序存储表示" data-v-b57cc07c>1、定长顺序存储表示</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#_2、堆分配存储表示" class="sidebar-link reco-side-_2、堆分配存储表示" data-v-b57cc07c>2、堆分配存储表示</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#_3、块链存储表示" class="sidebar-link reco-side-_3、块链存储表示" data-v-b57cc07c>3、块链存储表示</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#三、串的基本操作" class="sidebar-link reco-side-三、串的基本操作" data-v-b57cc07c>三、串的基本操作</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#四、串的模式匹配-重点" class="sidebar-link reco-side-四、串的模式匹配-重点" data-v-b57cc07c>四、串的模式匹配（重点）</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#_1、简单的模式匹配算法" class="sidebar-link reco-side-_1、简单的模式匹配算法" data-v-b57cc07c>1、简单的模式匹配算法</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#_2、kmp算法" class="sidebar-link reco-side-_2、kmp算法" data-v-b57cc07c>2、KMP算法</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure/bunch.html#kmp算法的进一步优化" class="sidebar-link reco-side-kmp算法的进一步优化" data-v-b57cc07c>KMP算法的进一步优化</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.d8a7e94a.js" defer></script><script src="/assets/js/4.6227a905.js" defer></script><script src="/assets/js/1.9ff3b7f0.js" defer></script><script src="/assets/js/23.82b20791.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>09-Docker安装Mysql | luffy博客</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我是睡了，你也差不多该醒了吧">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.d8a7e94a.js" as="script"><link rel="preload" href="/assets/js/4.6227a905.js" as="script"><link rel="preload" href="/assets/js/1.9ff3b7f0.js" as="script"><link rel="preload" href="/assets/js/50.b7ffa814.js" as="script"><link rel="prefetch" href="/assets/js/10.cc0da900.js"><link rel="prefetch" href="/assets/js/11.424d0126.js"><link rel="prefetch" href="/assets/js/12.64260b67.js"><link rel="prefetch" href="/assets/js/13.c1c6aee3.js"><link rel="prefetch" href="/assets/js/14.6f2b50e3.js"><link rel="prefetch" href="/assets/js/15.1a9ff8ee.js"><link rel="prefetch" href="/assets/js/16.cb50a692.js"><link rel="prefetch" href="/assets/js/17.dfa546b0.js"><link rel="prefetch" href="/assets/js/18.d7fcd772.js"><link rel="prefetch" href="/assets/js/19.9b1b442c.js"><link rel="prefetch" href="/assets/js/20.ad9df449.js"><link rel="prefetch" href="/assets/js/21.82c07026.js"><link rel="prefetch" href="/assets/js/22.a82097c2.js"><link rel="prefetch" href="/assets/js/23.82b20791.js"><link rel="prefetch" href="/assets/js/24.4e6d5ad1.js"><link rel="prefetch" href="/assets/js/25.d322cf9b.js"><link rel="prefetch" href="/assets/js/26.0092e9b8.js"><link rel="prefetch" href="/assets/js/27.5118de78.js"><link rel="prefetch" href="/assets/js/28.f52fbe57.js"><link rel="prefetch" href="/assets/js/29.73497840.js"><link rel="prefetch" href="/assets/js/3.a8ec120a.js"><link rel="prefetch" href="/assets/js/30.f1507212.js"><link rel="prefetch" href="/assets/js/31.f7f0ab2c.js"><link rel="prefetch" href="/assets/js/32.c839405d.js"><link rel="prefetch" href="/assets/js/33.afa163c4.js"><link rel="prefetch" href="/assets/js/34.210c0454.js"><link rel="prefetch" href="/assets/js/35.64c55af9.js"><link rel="prefetch" href="/assets/js/36.a7e7bf32.js"><link rel="prefetch" href="/assets/js/37.0094586f.js"><link rel="prefetch" href="/assets/js/38.c6769535.js"><link rel="prefetch" href="/assets/js/39.4d861cf5.js"><link rel="prefetch" href="/assets/js/40.27ced136.js"><link rel="prefetch" href="/assets/js/41.c56946df.js"><link rel="prefetch" href="/assets/js/42.d5937388.js"><link rel="prefetch" href="/assets/js/43.27b03cdf.js"><link rel="prefetch" href="/assets/js/44.d2473dff.js"><link rel="prefetch" href="/assets/js/45.20f53322.js"><link rel="prefetch" href="/assets/js/46.7b33890e.js"><link rel="prefetch" href="/assets/js/47.245a8645.js"><link rel="prefetch" href="/assets/js/48.e72e22c6.js"><link rel="prefetch" href="/assets/js/49.b2f9a673.js"><link rel="prefetch" href="/assets/js/5.6c0e3380.js"><link rel="prefetch" href="/assets/js/51.4d20e5b1.js"><link rel="prefetch" href="/assets/js/52.38157b82.js"><link rel="prefetch" href="/assets/js/53.0c88ef20.js"><link rel="prefetch" href="/assets/js/54.5b5983a9.js"><link rel="prefetch" href="/assets/js/55.7cdd188a.js"><link rel="prefetch" href="/assets/js/56.8e45ff1f.js"><link rel="prefetch" href="/assets/js/57.9ba48f9f.js"><link rel="prefetch" href="/assets/js/58.37dc388f.js"><link rel="prefetch" href="/assets/js/59.ab3f1f4b.js"><link rel="prefetch" href="/assets/js/6.af89627e.js"><link rel="prefetch" href="/assets/js/60.02decc24.js"><link rel="prefetch" href="/assets/js/61.c17fb34b.js"><link rel="prefetch" href="/assets/js/62.cef065fa.js"><link rel="prefetch" href="/assets/js/63.8f425581.js"><link rel="prefetch" href="/assets/js/64.1f2bd166.js"><link rel="prefetch" href="/assets/js/65.20ff19a7.js"><link rel="prefetch" href="/assets/js/66.5b5d9a2e.js"><link rel="prefetch" href="/assets/js/67.1d2cbe49.js"><link rel="prefetch" href="/assets/js/68.3a8078b7.js"><link rel="prefetch" href="/assets/js/69.7b63e64e.js"><link rel="prefetch" href="/assets/js/7.056202dc.js"><link rel="prefetch" href="/assets/js/70.09b9295b.js"><link rel="prefetch" href="/assets/js/71.2a79b3c8.js"><link rel="prefetch" href="/assets/js/72.da3bff7f.js"><link rel="prefetch" href="/assets/js/73.3d7b1c2e.js"><link rel="prefetch" href="/assets/js/74.a56e4e16.js"><link rel="prefetch" href="/assets/js/75.ac91acae.js"><link rel="prefetch" href="/assets/js/76.665afc87.js"><link rel="prefetch" href="/assets/js/77.1fd07fb6.js"><link rel="prefetch" href="/assets/js/78.a5bb0631.js"><link rel="prefetch" href="/assets/js/79.7475fa56.js"><link rel="prefetch" href="/assets/js/8.527f07c3.js"><link rel="prefetch" href="/assets/js/80.e07968a2.js"><link rel="prefetch" href="/assets/js/81.897e2ffd.js"><link rel="prefetch" href="/assets/js/82.95068134.js"><link rel="prefetch" href="/assets/js/83.544bbac2.js"><link rel="prefetch" href="/assets/js/84.202564a4.js"><link rel="prefetch" href="/assets/js/85.048332e5.js"><link rel="prefetch" href="/assets/js/86.7d1001f2.js"><link rel="prefetch" href="/assets/js/87.c8340e47.js"><link rel="prefetch" href="/assets/js/88.7acd59a0.js"><link rel="prefetch" href="/assets/js/89.9a7e81cd.js"><link rel="prefetch" href="/assets/js/9.247c2070.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>luffy博客</h3> <p class="description" data-v-59e6cb88>我是睡了，你也差不多该醒了吧</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="luffy博客" class="logo"> <span class="site-name">luffy博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    luffy
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>78</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>30</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><a href="/blogs/back/docker/overview.html" class="sidebar-link">01-Docker概述</a></li><li><a href="/blogs/back/docker/install.html" class="sidebar-link">02-Docker安装</a></li><li><a href="/blogs/back/docker/downloadfast.html" class="sidebar-link">03-Docker下载加速</a></li><li><a href="/blogs/back/docker/commands.html" class="sidebar-link">04-Docker常用命令</a></li><li><a href="/blogs/back/docker/containerCommand.html" class="sidebar-link">05-容器命令</a></li><li><a href="/blogs/back/docker/privateWarehouse.html" class="sidebar-link">08-Registry搭建docker私仓</a></li><li><a href="/blogs/back/docker/installMysql.html" aria-current="page" class="active sidebar-link">09-Docker安装Mysql</a></li><li><a href="/blogs/back/docker/docker_File.html" class="sidebar-link">dockerfile</a></li><li><a href="/blogs/back/docker/deploy.html" class="sidebar-link">Docker+nginx部署Springboot+vue前后端分离项目</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>09-Docker安装Mysql</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">09-Docker安装Mysql</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>luffy</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>11/10/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>docker</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="docker-安装-mysql"><a href="#docker-安装-mysql" class="header-anchor">#</a> Docker 安装 Mysql</h2> <p>以安装 Mysql 5.7为例：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> pull mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="mysql-单机"><a href="#mysql-单机" class="header-anchor">#</a> Mysql 单机</h2> <h2 id="简单版-mysql-5-7-安装"><a href="#简单版-mysql-5-7-安装" class="header-anchor">#</a> 简单版 Mysql 5.7 安装</h2> <p>简单的启动Mysql容器：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 需要使用 -e 配置环境变量 MYSQL_ROOT_PASSWORD（mysql root用户的密码）</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root <span class="token parameter variable">-d</span> mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>简单版的Mysql会存在以下问题：</p> <ul><li>中文乱码</li> <li>没有容器卷映射</li></ul> <p>启动docker容器后，可以正常的连接、创建数据库，创建表，插入数据。但是插入中文则会报错。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>-- 创建db01数据库
+create database db01<span class="token punctuation">;</span>
+-- 切换到db01<span class="token punctuation">;</span>
+use db01<span class="token punctuation">;</span>
+-- 创建表
+create table t1<span class="token punctuation">(</span>id int, name varchar<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+
+-- 插入英文可以正常插入
+insert into t1 values<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+-- 插入中文报错
+insert into t1 values<span class="token punctuation">(</span><span class="token number">2</span>, <span class="token string">'张三'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>这是因为docker默认的字符集的问题，可以在mysql中使用以下命令查看数据库字符集：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>show variables like <span class="token string">'character%'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>返回的字符集中，character_set_database、character_set_server等都为latin1字符集，所以会报错。</p> <p>而且因为启动容器时没有配置容器卷映射，当容器意外被删时，数据无法找回。</p> <h2 id="实际应用版-mysql-5-7安装"><a href="#实际应用版-mysql-5-7安装" class="header-anchor">#</a> 实际应用版 Mysql 5.7安装</h2> <p>启动 Mysql 容器，并配置容器卷映射：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token punctuation">\</span>
+           <span class="token parameter variable">--privileged</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql/log:/var/log/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql/data:/var/lib/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql/conf:/etc/mysql/conf.d <span class="token punctuation">\</span>
+           <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root <span class="token punctuation">\</span>
+           <span class="token parameter variable">--name</span> mysql <span class="token punctuation">\</span>
+           mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在/app/mysql/conf下新建 my.cnf，通过容器卷同步给mysql实例，解决中文乱码问题：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token assign-left variable">default_character_set</span><span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+collation_server <span class="token operator">=</span> utf8_general_ci
+character_set_server <span class="token operator">=</span> utf8
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>重启mysql容器，使得容器重新加载配置文件：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> restart mysql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>此时便解决了中文乱码（中文插入报错）问题。</p> <p>而且因为启动时将容器做了容器卷映射，将mysql的配置（映射到/app/mysql/conf）、数据（映射到/app/mysql/data）、日志（映射到/app/mysql/log）都映射到了宿主机实际目录，所以即使删除了容器，也不会产生太大影响。只需要再执行一下启动Mysql容器命令，容器卷还按相同位置进行映射，所有的数据便都可以正常恢复。</p> <h2 id="mysql-主从复制安装"><a href="#mysql-主从复制安装" class="header-anchor">#</a> Mysql 主从复制安装</h2> <p>安装主服务器容器实例（端口号3307）：</p> <ol><li>启动容器实例</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-p</span> <span class="token number">3307</span>:3306 <span class="token punctuation">\</span>
+           <span class="token parameter variable">--name</span> mysql-master <span class="token punctuation">\</span>
+           <span class="token parameter variable">--privileged</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-master/log:/var/log/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-master/data:/var/lib/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-master/conf:/etc/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root <span class="token punctuation">\</span>
+           <span class="token parameter variable">-d</span> mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ol start="2"><li>进入/app/mysql-master/conf，新建my.cnf配置文件：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment">## 设置server_id, 同一个局域网中需要唯一</span>
+<span class="token assign-left variable">server_id</span><span class="token operator">=</span><span class="token number">101</span>
+<span class="token comment">## 指定不需要同步的数据库名称</span>
+binlog-ignore-db<span class="token operator">=</span>mysql
+<span class="token comment">## 开启二进制日志功能</span>
+log-bin<span class="token operator">=</span>mall-mysql-bin
+<span class="token comment">## 设置二进制日志使用内存大小（事务）</span>
+<span class="token assign-left variable">binlog_cache_size</span><span class="token operator">=</span>1M
+<span class="token comment">## 设置使用的二进制日志格式（mixed,statement,row）</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+<span class="token comment">## 二进制日志过期清理时间。默认值为0，表示不自动清理</span>
+<span class="token assign-left variable">expire_logs_days</span><span class="token operator">=</span><span class="token number">7</span>
+<span class="token comment">## 跳过主从复制中遇到的所有错误或指定类型的错误，避免slave端复制中断</span>
+<span class="token comment">## 如：1062错误是指一些主键重复，1032错误是因为主从数据库数据不一致</span>
+<span class="token assign-left variable">slave_skip_errors</span><span class="token operator">=</span><span class="token number">1062</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><ol start="3"><li>重启容器实例</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> restart mysql-master
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="4"><li>进入容器实例内</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql-master /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="5"><li>登录mysql，创建数据同步用户</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>-- 首先使用 mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span> 登录mysql
+-- 创建数据同步用户
+create user <span class="token string">'slave'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+-- 授权
+grant replication slave, replication client on *.* to <span class="token string">'slave'</span>@<span class="token string">'%'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>安装从服务器容器实例（端口号3308）：</p> <ol><li>启动容器服务：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-p</span> <span class="token number">3308</span>:3306 <span class="token punctuation">\</span>
+           <span class="token parameter variable">--name</span> mysql-slave <span class="token punctuation">\</span>
+           <span class="token parameter variable">--privileged</span><span class="token operator">=</span>true <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-slave/log:/var/log/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-slave/data:/var/lib/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-v</span> /app/mysql-slave/conf:/etc/mysql <span class="token punctuation">\</span>
+           <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root <span class="token punctuation">\</span>
+           <span class="token parameter variable">-d</span> mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ol start="2"><li>进入/app/mysql-slave/conf目录，创建my.cnf配置文件：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment">## 设置server_id, 同一个局域网内需要唯一</span>
+<span class="token assign-left variable">server_id</span><span class="token operator">=</span><span class="token number">102</span>
+<span class="token comment">## 指定不需要同步的数据库名称</span>
+binlog-ignore-db<span class="token operator">=</span>mysql
+<span class="token comment">## 开启二进制日志功能，以备slave作为其它数据库实例的Master时使用</span>
+log-bin<span class="token operator">=</span>mall-mysql-slave1-bin
+<span class="token comment">## 设置二进制日志使用内存大小（事务）</span>
+<span class="token assign-left variable">binlog_cache_size</span><span class="token operator">=</span>1M
+<span class="token comment">## 设置使用的二进制日志格式（mixed,statement,row）</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+<span class="token comment">## 二进制日志过期清理时间。默认值为0，表示不自动清理</span>
+<span class="token assign-left variable">expire_logs_days</span><span class="token operator">=</span><span class="token number">7</span>
+<span class="token comment">## 跳过主从复制中遇到的所有错误或指定类型的错误，避免slave端复制中断</span>
+<span class="token comment">## 如：1062错误是指一些主键重复，1032是因为主从数据库数据不一致</span>
+<span class="token assign-left variable">slave_skip_errors</span><span class="token operator">=</span><span class="token number">1062</span>
+<span class="token comment">## relay_log配置中继日志</span>
+<span class="token assign-left variable">relay_log</span><span class="token operator">=</span>mall-mysql-relay-bin
+<span class="token comment">## log_slave_updates表示slave将复制事件写进自己的二进制日志</span>
+<span class="token assign-left variable">log_slave_updates</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment">## slave设置只读（具有super权限的用户除外）</span>
+<span class="token assign-left variable">read_only</span><span class="token operator">=</span><span class="token number">1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><ol start="3"><li>修改完配置需要重启slave容器实例</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> restart mysql-slave
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在主数据库中查看主从同步状态：</p> <ol><li>进入主数据库容器：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql-master /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>进入Mysql</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>查看主从同步状态</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>show master status<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>主要查看返回结果的文件名File、当前位置Position</p> <p>进入从数据库容器，配置主从复制：</p> <ol><li>进入从数据库容器：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql-slave /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>进入数据库</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>配置从数据库所属的主数据库：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>-- 格式：
+-- change master to <span class="token assign-left variable">master_host</span><span class="token operator">=</span><span class="token string">'宿主机ip'</span>,master_user<span class="token operator">=</span><span class="token string">'主数据库配置的主从复制用户名'</span>,master_password<span class="token operator">=</span><span class="token string">'主数据库配置的主从复制用户密码'</span>,master_port<span class="token operator">=</span>宿主机主数据库端口,master_log_file<span class="token operator">=</span><span class="token string">'主数据库主从同步状态的文件名File'</span>,master_log_pos<span class="token operator">=</span>主数据库主从同步状态的Position,master_connect_retry<span class="token operator">=</span>连接失败重试时间间隔（秒）<span class="token punctuation">;</span>
+
+change master to <span class="token assign-left variable">master_host</span><span class="token operator">=</span><span class="token string">'192.168.xxx.xxx'</span>,master_user<span class="token operator">=</span><span class="token string">'slave'</span>,master_password<span class="token operator">=</span><span class="token string">'123456'</span>,master_port<span class="token operator">=</span><span class="token number">3307</span>,master_log_file<span class="token operator">=</span><span class="token string">'mall-mysql-bin.000001'</span>,master_log_pos<span class="token operator">=</span><span class="token number">769</span>,master_connect_retry<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="4"><li>查看主从同步状态：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># \G 可以将横向的结果集表格转换成纵向展示。</span>
+<span class="token comment"># slave status的字段比较多，纵向展示比友好</span>
+show slave status <span class="token punctuation">\</span>G<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>除了展示刚刚配置的主数据库信息外，主要关注 Slave_IO_Running、Slave_SQL_Running。目前两个值应该都为 No，表示还没有开始。</p> <ol start="5"><li>开启主从同步：</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>start slave<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="6"><li>再次查看主从同步状态，Slave_IO_Running、Slave_SQL_Running都变为Yes。</li></ol> <p>主从复制测试：</p> <ol><li>在主数据库上新建库、使用库、新建表、插入数据</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>create database db01<span class="token punctuation">;</span>
+use db01<span class="token punctuation">;</span>
+create table t1 <span class="token punctuation">(</span>id int, name varchar<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+insert into t1 values <span class="token punctuation">(</span><span class="token number">1</span>, <span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ol start="2"><li>在从数据库上使用库、查看记录</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>show databases<span class="token punctuation">;</span>
+use db01<span class="token punctuation">;</span>
+<span class="token keyword">select</span> * from t1<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/10/2023, 11:47:31 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/back/docker/privateWarehouse.html" class="prev">
+          08-Registry搭建docker私仓
+        </a></span> <span class="next"><a href="/blogs/back/docker/docker_File.html">
+          dockerfile
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/blogs/back/docker/installMysql.html#docker-安装-mysql" class="sidebar-link reco-side-docker-安装-mysql" data-v-b57cc07c>Docker 安装 Mysql</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/back/docker/installMysql.html#mysql-单机" class="sidebar-link reco-side-mysql-单机" data-v-b57cc07c>Mysql 单机</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/back/docker/installMysql.html#简单版-mysql-5-7-安装" class="sidebar-link reco-side-简单版-mysql-5-7-安装" data-v-b57cc07c>简单版 Mysql 5.7 安装</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/back/docker/installMysql.html#实际应用版-mysql-5-7安装" class="sidebar-link reco-side-实际应用版-mysql-5-7安装" data-v-b57cc07c>实际应用版 Mysql 5.7安装</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/back/docker/installMysql.html#mysql-主从复制安装" class="sidebar-link reco-side-mysql-主从复制安装" data-v-b57cc07c>Mysql 主从复制安装</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.d8a7e94a.js" defer></script><script src="/assets/js/4.6227a905.js" defer></script><script src="/assets/js/1.9ff3b7f0.js" defer></script><script src="/assets/js/50.b7ffa814.js" defer></script>
+  </body>
+</html>

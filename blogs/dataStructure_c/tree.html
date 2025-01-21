@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>六、树和二叉树 | luffy博客</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我是睡了，你也差不多该醒了吧">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.e853742c.css" as="style"><link rel="preload" href="/assets/js/app.d8a7e94a.js" as="script"><link rel="preload" href="/assets/js/4.6227a905.js" as="script"><link rel="preload" href="/assets/js/1.9ff3b7f0.js" as="script"><link rel="preload" href="/assets/js/5.6c0e3380.js" as="script"><link rel="prefetch" href="/assets/js/10.cc0da900.js"><link rel="prefetch" href="/assets/js/11.424d0126.js"><link rel="prefetch" href="/assets/js/12.64260b67.js"><link rel="prefetch" href="/assets/js/13.c1c6aee3.js"><link rel="prefetch" href="/assets/js/14.6f2b50e3.js"><link rel="prefetch" href="/assets/js/15.1a9ff8ee.js"><link rel="prefetch" href="/assets/js/16.cb50a692.js"><link rel="prefetch" href="/assets/js/17.dfa546b0.js"><link rel="prefetch" href="/assets/js/18.d7fcd772.js"><link rel="prefetch" href="/assets/js/19.9b1b442c.js"><link rel="prefetch" href="/assets/js/20.ad9df449.js"><link rel="prefetch" href="/assets/js/21.82c07026.js"><link rel="prefetch" href="/assets/js/22.a82097c2.js"><link rel="prefetch" href="/assets/js/23.82b20791.js"><link rel="prefetch" href="/assets/js/24.4e6d5ad1.js"><link rel="prefetch" href="/assets/js/25.d322cf9b.js"><link rel="prefetch" href="/assets/js/26.0092e9b8.js"><link rel="prefetch" href="/assets/js/27.5118de78.js"><link rel="prefetch" href="/assets/js/28.f52fbe57.js"><link rel="prefetch" href="/assets/js/29.73497840.js"><link rel="prefetch" href="/assets/js/3.a8ec120a.js"><link rel="prefetch" href="/assets/js/30.f1507212.js"><link rel="prefetch" href="/assets/js/31.f7f0ab2c.js"><link rel="prefetch" href="/assets/js/32.c839405d.js"><link rel="prefetch" href="/assets/js/33.afa163c4.js"><link rel="prefetch" href="/assets/js/34.210c0454.js"><link rel="prefetch" href="/assets/js/35.64c55af9.js"><link rel="prefetch" href="/assets/js/36.a7e7bf32.js"><link rel="prefetch" href="/assets/js/37.0094586f.js"><link rel="prefetch" href="/assets/js/38.c6769535.js"><link rel="prefetch" href="/assets/js/39.4d861cf5.js"><link rel="prefetch" href="/assets/js/40.27ced136.js"><link rel="prefetch" href="/assets/js/41.c56946df.js"><link rel="prefetch" href="/assets/js/42.d5937388.js"><link rel="prefetch" href="/assets/js/43.27b03cdf.js"><link rel="prefetch" href="/assets/js/44.d2473dff.js"><link rel="prefetch" href="/assets/js/45.20f53322.js"><link rel="prefetch" href="/assets/js/46.7b33890e.js"><link rel="prefetch" href="/assets/js/47.245a8645.js"><link rel="prefetch" href="/assets/js/48.e72e22c6.js"><link rel="prefetch" href="/assets/js/49.b2f9a673.js"><link rel="prefetch" href="/assets/js/50.b7ffa814.js"><link rel="prefetch" href="/assets/js/51.4d20e5b1.js"><link rel="prefetch" href="/assets/js/52.38157b82.js"><link rel="prefetch" href="/assets/js/53.0c88ef20.js"><link rel="prefetch" href="/assets/js/54.5b5983a9.js"><link rel="prefetch" href="/assets/js/55.7cdd188a.js"><link rel="prefetch" href="/assets/js/56.8e45ff1f.js"><link rel="prefetch" href="/assets/js/57.9ba48f9f.js"><link rel="prefetch" href="/assets/js/58.37dc388f.js"><link rel="prefetch" href="/assets/js/59.ab3f1f4b.js"><link rel="prefetch" href="/assets/js/6.af89627e.js"><link rel="prefetch" href="/assets/js/60.02decc24.js"><link rel="prefetch" href="/assets/js/61.c17fb34b.js"><link rel="prefetch" href="/assets/js/62.cef065fa.js"><link rel="prefetch" href="/assets/js/63.8f425581.js"><link rel="prefetch" href="/assets/js/64.1f2bd166.js"><link rel="prefetch" href="/assets/js/65.20ff19a7.js"><link rel="prefetch" href="/assets/js/66.5b5d9a2e.js"><link rel="prefetch" href="/assets/js/67.1d2cbe49.js"><link rel="prefetch" href="/assets/js/68.3a8078b7.js"><link rel="prefetch" href="/assets/js/69.7b63e64e.js"><link rel="prefetch" href="/assets/js/7.056202dc.js"><link rel="prefetch" href="/assets/js/70.09b9295b.js"><link rel="prefetch" href="/assets/js/71.2a79b3c8.js"><link rel="prefetch" href="/assets/js/72.da3bff7f.js"><link rel="prefetch" href="/assets/js/73.3d7b1c2e.js"><link rel="prefetch" href="/assets/js/74.a56e4e16.js"><link rel="prefetch" href="/assets/js/75.ac91acae.js"><link rel="prefetch" href="/assets/js/76.665afc87.js"><link rel="prefetch" href="/assets/js/77.1fd07fb6.js"><link rel="prefetch" href="/assets/js/78.a5bb0631.js"><link rel="prefetch" href="/assets/js/79.7475fa56.js"><link rel="prefetch" href="/assets/js/8.527f07c3.js"><link rel="prefetch" href="/assets/js/80.e07968a2.js"><link rel="prefetch" href="/assets/js/81.897e2ffd.js"><link rel="prefetch" href="/assets/js/82.95068134.js"><link rel="prefetch" href="/assets/js/83.544bbac2.js"><link rel="prefetch" href="/assets/js/84.202564a4.js"><link rel="prefetch" href="/assets/js/85.048332e5.js"><link rel="prefetch" href="/assets/js/86.7d1001f2.js"><link rel="prefetch" href="/assets/js/87.c8340e47.js"><link rel="prefetch" href="/assets/js/88.7acd59a0.js"><link rel="prefetch" href="/assets/js/89.9a7e81cd.js"><link rel="prefetch" href="/assets/js/9.247c2070.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e853742c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>luffy博客</h3> <p class="description" data-v-59e6cb88>我是睡了，你也差不多该醒了吧</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="luffy博客" class="logo"> <span class="site-name">luffy博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link router-link-active"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    luffy
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>78</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>30</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/docker/" class="nav-link"><i class="undefined"></i>
+  docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure/" class="nav-link"><i class="undefined"></i>
+  data-structure
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data-structure_c/" class="nav-link"><i class="undefined"></i>
+  data-structure_c
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="undefined"></i>
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具箱/" class="nav-link"><i class="undefined"></i>
+  工具箱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代理/" class="nav-link"><i class="undefined"></i>
+  代理
+</a></li><li class="dropdown-item"><!----> <a href="/categories/力扣/" class="nav-link"><i class="undefined"></i>
+  力扣
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/快捷键/" class="nav-link"><i class="undefined"></i>
+  快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/categories/代码/" class="nav-link"><i class="undefined"></i>
+  代码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研/" class="nav-link"><i class="undefined"></i>
+  考研
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研代码题/" class="nav-link"><i class="undefined"></i>
+  考研代码题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研大作文/" class="nav-link"><i class="undefined"></i>
+  考研大作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英语模板/" class="nav-link"><i class="undefined"></i>
+  英语模板
+</a></li><li class="dropdown-item"><!----> <a href="/categories/考研小作文/" class="nav-link"><i class="undefined"></i>
+  考研小作文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客搭建/" class="nav-link"><i class="undefined"></i>
+  博客搭建
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软考设计师/" class="nav-link"><i class="undefined"></i>
+  软考设计师
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/blogs/dataStructure_c/" class="nav-link router-link-active"><i class="iconfont reco-message"></i>
+  数据结构
+</a></div><div class="nav-item"><a href="/blogs/toolKit/" class="nav-link"><i class="iconfont reco-message"></i>
+  工具箱
+</a></div><div class="nav-item"><a href="https://github.com/DreamLuffe" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><a href="/blogs/dataStructure_c/" aria-current="page" class="sidebar-link">数据结构</a></li><li><a href="/blogs/dataStructure_c/basic.html" class="sidebar-link">一、基本概念</a></li><li><a href="/blogs/dataStructure_c/algorithmAnalysis.html" class="sidebar-link">二、算法和算法分析</a></li><li><a href="/blogs/dataStructure_c/linearList.html" class="sidebar-link">三、线性表</a></li><li><a href="/blogs/dataStructure_c/StackQueue.html" class="sidebar-link">四、栈和队列</a></li><li><a href="/blogs/dataStructure_c/stringsArraysGenTab.html" class="sidebar-link">五、串，数组，广义表</a></li><li><a href="/blogs/dataStructure_c/tree.html" aria-current="page" class="active sidebar-link">六、树和二叉树</a></li><li><a href="/blogs/dataStructure_c/graph.html" class="sidebar-link">七、图</a></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>六、树和二叉树</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>luffy</span>
+          
+        <span data-v-59e6cb88>2023 - </span>
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">六、树和二叉树</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>luffy</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>12/14/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>data-structure_c</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="六、树和二叉树"><a href="#六、树和二叉树" class="header-anchor">#</a> 六、树和二叉树</h1> <h2 id="树"><a href="#树" class="header-anchor">#</a> 树</h2> <h3 id="树的定义"><a href="#树的定义" class="header-anchor">#</a> 树的定义</h3> <p>有n(n≥0)个结点的有限集合。当n=0时，称为空树；任意一颗非空树应满足以下条件：</p> <p>​	1)、有且只有 一个根结点</p> <p>​	2)、当n&gt;1时，除根结点外的其余结点被分成m(m&gt;0)个互不相交的有线集合T1，T2,...,Tm,其中每个集合又是一棵树，并称为这个根结点的子树</p> <h3 id="树的相关术语"><a href="#树的相关术语" class="header-anchor">#</a> 树的相关术语</h3> <p>*<em>(<em>下列此相关术语解释以下图做参考)</em></em></p> <img src="/assets/img/image_20231209153427761.4f570b19.png" alt="image_20231209153427761" style="zoom:50%;"> <ul><li><p>结点的度：结点所拥有的子树的个数。例：D有三个子树，即D结点的度为3；</p></li> <li><p>树的度：树中所有结点的度的最大值。上图树的度为3.因为所有结点中最大的度为3；</p></li> <li><p>祖先结点：往上知道根结点，做经过的所有结点都称为祖先结点。例：E的祖先结点有B、A；</p></li> <li><p>子孙结点：一个结点的所有分支。例：B的子孙结点有K、L、E、F；</p></li> <li><p>双亲结点/父结点：往上一级结点。例：E的双亲结点为B；</p></li> <li><p>孩子结点：往下一级结点。例：B的孩子结点有E、F；(*孩子结点只包括往下一级，而子孙结点包括往下的所有)</p></li> <li><p>兄弟结点：同一个前驱结点。例：E、F都是由B分出来的，即E、F为兄弟结点；</p></li> <li><p>堂兄弟结点：处于同一级且不是同一个前驱结点。例：E、G的前驱结点不是同一个，即E、G为堂兄弟结点；</p></li> <li><p>路径：从根结点A开始到结点E，路径为A-&gt;B-&gt;E,其路径长度就是有几条边，A到E的路径长度为2；</p></li> <li><p>有序树&amp;无序树：从逻辑上看，有序树中结点的各子树从左至右是有次序的，不可互换；而无序树中结点的各子树从左至右是无次序的，可以互换；</p></li></ul> <h3 id="树的基本性质"><a href="#树的基本性质" class="header-anchor">#</a> 树的基本性质</h3> <p>​	1)、树中的结点数等于所有结点的度数之和加一；(*加一是因为每个结点有且仅有一个前驱结点，才构成度，但是根结点是没有前驱结点的，加一即加上跟结点)</p> <p>​	2)、度为m的树中第i层上最多有m^(i-1)个结点（i≥1）</p> <p>​	3)、高度为h的m叉树最多有m^(h)-1/m-1个结点</p> <p>​	4)、具有n个结点的m叉树的最小高度是：log( n(m-1) + 1)以m为底；</p> <h3 id="树的基本运算"><a href="#树的基本运算" class="header-anchor">#</a> 树的基本运算</h3> <h4 id="先根遍历-根左右"><a href="#先根遍历-根左右" class="header-anchor">#</a> 先根遍历(根左右)</h4> <p>①先访问根节点。②按照从左到右的顺序先遍历根结点的每一颗子树。按照上图的先根遍历结果为：ABEKLFCGDHMIJ</p> <h4 id="后根遍历-左右根"><a href="#后根遍历-左右根" class="header-anchor">#</a> 后根遍历(左右根)</h4> <p>①按照从左到右的顺序先遍历根结点的每一颗子树。②访问根结点。按照上图的后根遍历结果：KLEFBGCMHIJDA</p> <h4 id="层次遍历"><a href="#层次遍历" class="header-anchor">#</a> 层次遍历</h4> <p>即头结点开始依次从上往下从左往右的顺序访问每一个结点。按照上图层次遍历的结果：ABCDEFGHIJKLM</p> <h3 id="树的存储结构"><a href="#树的存储结构" class="header-anchor">#</a> 树的存储结构</h3> <h4 id="双亲表示法"><a href="#双亲表示法" class="header-anchor">#</a> 双亲表示法</h4> <p>​	是一种顺序存储结构，用一组连续的空间来存储树中的结点，在保存每个结点的同时附设一个指示器parent指示其双亲结点在表中的位置。</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>typedef struct
+{
+	Elemtype data; //存放节点数据
+	int parent;//存放双亲的位置
+}PTree[MaxSize];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><img src="/assets/img/image_20231209200722288.cba2aef7.png" alt="image_20231209200722288" style="zoom:40%;"> <h4 id="孩子表示法"><a href="#孩子表示法" class="header-anchor">#</a> 孩子表示法</h4> <p>​	用一组连续的空间来存储树中的结点，把每个结点的孩子在表中的位置（并非孩子本身）排列起来构成一个单链表，称为孩子链表。n个结点共有n个孩子链表。</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>typedef struct node{
+	ElemType data;//结点的值
+	struct node * sons[MaxSons];//指向孩子结点
+}TSonNode;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><img src="/assets/img/image_20231209201422592.dfa6b628.png" alt="image_20231209201422592" style="zoom:40%;"> <h2 id="二叉树"><a href="#二叉树" class="header-anchor">#</a> 二叉树</h2> <h3 id="定义"><a href="#定义" class="header-anchor">#</a> 定义</h3> <p>​		有限的结点的集合，由根结点和不相交的二叉子树组成；</p> <p>​		二叉树的五种基本形态：</p> <img src="/assets/img/image_20231209185330775.aa5d4c33.png" alt="image_20231209185330775" style="zoom:50%;"> <h3 id="树和二叉树的联系与区别"><a href="#树和二叉树的联系与区别" class="header-anchor">#</a> 树和二叉树的联系与区别</h3> <p>​	满足以下两个条件的树形结构叫做二叉树：</p> <ul><li>每个结点至多只有两棵子树</li> <li>二叉树的子树有左右之分，其次序不能颠倒，是有序树。而树可以有序可以无序</li></ul> <p>【孩子与双亲：结点若有直接后继，则可称它为它直接后继结点的父亲或双亲，直接后继结点为它的孩子，位于左边的孩子叫做左孩子，位于右边的孩子叫做右孩子】</p> <h3 id="二叉树的基本术语"><a href="#二叉树的基本术语" class="header-anchor">#</a> 二叉树的基本术语</h3> <ul><li>结点的度：结点直接后继的个数</li> <li>树的度：树的所有结点的度的最大值</li> <li>叶子结点：也称终端结点，即度为0的结点</li> <li>分支结点：也称非终端结点，即度不为0的结点</li> <li>孩子结点：结点的直接后继</li> <li>双亲结点：结点的直接前驱</li> <li>兄弟结点：同一双亲结点的孩子结点互称兄弟结点</li></ul> <h3 id="二叉树的分类"><a href="#二叉树的分类" class="header-anchor">#</a> 二叉树的分类</h3> <h4 id="满二叉树"><a href="#满二叉树" class="header-anchor">#</a> 满二叉树</h4> <p>一颗高度为h，且含有2^h-1结点的二叉树。(人话：除了根结点外，其余分支结点都有两个度，不存在只有一个度的结点)如下图：</p> <img src="/assets/img/image_20231209212640017.171489fe.png" alt="image_20231209212640017" style="zoom:40%;"> <p>**特点：**①不存在度为1的结点</p> <p>​			②只有最后一层有叶子节点</p> <p>​			③按层序从1开始编号，结点为i的左孩子为2i，右孩子为2i+1，结点i的父结点为i/2(如果有的话)</p> <h4 id="完全二叉树"><a href="#完全二叉树" class="header-anchor">#</a> 完全二叉树</h4> <p>当且仅当其每个结点都与高度为h的满二叉树中编号为1~n的结点一一对应时，称为完全二叉树</p> <img src="/assets/img/image_20231209213237804.aaed6bcf.png" alt="image_20231209213237804" style="zoom:40%;"> <p>**特点：**①只有最后两层可能有叶子结点
+②最多只有一个度为1的结点
+③按层序从1开始编号，结点为i的左孩子为2i，右孩子为2i+1，结点i的父结点为i/2(如果有的话)
+④i≤n/2为分支结点，i&gt;n/2为叶子结点</p> <p>​			(补充：1.对于完全二叉树，如果只有一个子结点时，那么一定是左结点</p> <p>​						2.满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树)</p> <h4 id="二叉排序树"><a href="#二叉排序树" class="header-anchor">#</a> 二叉排序树</h4> <p>一棵二叉树或者是空二叉树，或者是具有如下性质的二叉树:</p> <ul><li>​	左子树上所有结点的关键字均小于根结点的关键字;</li> <li>​	右子树上所有结点的关键字均大于根结点的关键字。</li> <li>​	且左子树和右子树又各是一颗二叉排序树 。</li></ul> <img src="/assets/img/image_20231209214200577.eceb6093.png" alt="image_20231209214200577" style="zoom:40%;"> <h4 id="平衡二叉树"><a href="#平衡二叉树" class="header-anchor">#</a> 平衡二叉树</h4> <p>树上任意结点的左子树与右子树的深度之差不超过1</p> <img src="/assets/img/image_20231209214445656.7592d4ff.png" alt="image_20231209214445656" style="zoom:40%;"> <h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="header-anchor">#</a> 二叉树的存储结构</h3> <h4 id="顺序存储"><a href="#顺序存储" class="header-anchor">#</a> 顺序存储</h4> <p>顺序结构存储就是使用数组来存储，按编号顺序存储。</p> <p>所以对于完全二叉树，直接从根起按层序存储即可，依次自上向下自左向右存储结点元素，将完全二叉树中编号为i的结点存储在数组中下标为i-1的分量中。而对于一般的二叉树，由于也是按照编号存储，二叉树的顺序存储中可能会出现大量未用分量，十分浪费空间所以对于一般二叉树，不适合用顺序存储，</p> <p>由此可见二叉树的顺序存储只适合完全二叉树的存储。对于一般二叉树，更适合二叉树的链式存储。二叉树顺序存储在物理上是一个数组，在逻辑上是一颗二叉树。</p> <img src="/assets/img/image_20231216150812897.a77c5ad2.png" alt="image_20231216150812897" style="zoom:43%;"> <h4 id="链式存储"><a href="#链式存储" class="header-anchor">#</a> 链式存储</h4> <p>二叉树由根节点和左右子树构成（如a图）。所以二叉树的结点由数据域，左右指针域，三个部分构成（如图b）。为了便于寻找结点的双亲，我们可以增加一个指向双亲结点的指针域。（如图c）</p> <img src="/assets/img/image_20231216150908142.6b140792.png" alt="image_20231216150908142" style="zoom:33%;"> <p>利用这两种结点，所得到的二叉树的存储结构分别称为二叉链表和三叉链表：</p> <img src="/assets/img/image_20231216151016579.8d6ffa83.png" alt="image_20231216151016579" style="zoom:50%;"> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>typedef int BTDataType;
+// 二叉链
+struct BinaryTreeNode
+{
+	struct BinTreeNode* _pLeft; // 指向当前节点左孩子
+	struct BinTreeNode* _pRight; // 指向当前节点右孩子
+	BTDataType _data; // 当前节点值域
+}
+
+// 三叉链
+struct BinaryTreeNode
+{
+    struct BinTreeNode* _pParent; // 指向当前节点的双亲
+    struct BinTreeNode* _pLeft; // 指向当前节点左孩子
+    struct BinTreeNode* _pRight; // 指向当前节点右孩子
+    BTDataType _data; // 当前节点值域
+}；
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="header-anchor">#</a> 二叉树的遍历</h3> <p>按照一定的次序访问二叉树中的所有结点，并且每个 结点仅被访问一次的过程。分别用LDR表示二叉树的根节点，左子树，右子树。我们就有3！种遍历顺序，若规定先左后右，就只有三种：DLR、LDR、LRD，分别对应先序遍历、中序遍历、后续遍历。</p> <h4 id="先、中、后序遍历-递归"><a href="#先、中、后序遍历-递归" class="header-anchor">#</a> 先、中、后序遍历（递归）</h4> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//先序——访问根结点的操作发生在遍历其左右子树之前。
+void PreOrder(BTNode *b)
+{  if (b!=NULL)  
+   {  printf(&quot;%c &quot;，b-&gt;data); 	//访问根结点
+      PreOrder(b-&gt;lchild);
+      PreOrder(b-&gt;rchild);
+   }
+}
+
+//中序——访问左结点的操作发生在遍历其根结点和右子树之前。
+void InOrder(BTNode *b)
+{  if (b!=NULL)  
+   {  InOrder(b-&gt;lchild);
+      printf(&quot;%c &quot;，b-&gt;data); 	//访问根结点
+      InOrder(b-&gt;rchild);
+   }
+}
+
+//后序——访问左右结点的操作发生在遍历其根结点之前。
+void PostOrder(BTNode *b) 
+{  if (b!=NULL)  
+   {  PostOrder(b-&gt;lchild);
+      PostOrder(b-&gt;rchild);
+      printf(&quot;%c &quot;，b-&gt;data); 	//访问根结点
+   }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>这里算法中的访问是直接输出结点值。实际上，访问结点可以对该结点进行各种操作，如计数、删除结点等。3种递归算法的执行过程是递归的。以先序遍历图解：</p> <img src="/assets/img/image_20231216151120504.bb9dacf1.png" alt="image_20231216151120504" style="zoom:37%;"> <h4 id="先、中、后序遍历-非递归"><a href="#先、中、后序遍历-非递归" class="header-anchor">#</a> *先、中、后序遍历（非递归）</h4> <p>递归在系统中本质就是系统栈的使用，所以递归能遍历二叉树，那么就能使用栈堆二叉树进行非递归遍历。</p> <p>算法思路：</p> <ol><li><p>初始化空战，指针p指向根节点H</p></li> <li><p>申请一个结点空间用来存放栈顶弹出去的元素</p></li> <li><p>当p非空或栈非空，循环执行以下操作：</p> <p>如果p非空，则p进栈，p指向该节点的左孩子</p> <p>如果p为空，则弹出栈顶元素并访问根节点，将p指向该节点的有孩子</p></li> <li><p>先序非递归遍历：</p> <p>指针指向根节点，建立栈。循环遍历：</p> <p>​	p非空则入栈，同时p指向左子树</p> <p>​	p空则出栈顶元素，p指向栈顶的右子树</p> <p>​	先序遍历就是在入栈的时候输出</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//前序非递归遍历
+void PreOrderTraverse(BTNode* root){
+    
+	if (root == NULL)
+		return;
+	BTNode* p = root;
+	stack&lt;BTNode*&gt; s;
+	while (!s.empty() || p)
+	{
+		if (p)
+		{
+			cout &lt;&lt; setw(4) &lt;&lt; p-&gt;data;
+			s.push(p);
+			p = p-&gt;lchild;
+		}
+		else
+		{
+			p = s.top();
+			s.pop();
+			p = p-&gt;rchild;
+		}
+	}
+	cout &lt;&lt; endl;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div></li> <li><p>中序非递归遍历：</p> <p>​	p非空则入栈，同时p指向左子树</p> <p>​	p空则出栈顶元素，p指向栈顶的右子树</p> <p>​	中序遍历就是在栈顶出元素的时候输出</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//中序非递归遍历
+void InOrderTraverse(BTreeNode* root){
+    
+    if (root == NULL)
+		return;
+	stack&lt;BTreeNode*&gt; s;
+	BTreeNode* temp;
+	BTreeNode* p = root;
+	while (p || !s.empty()){
+		if (p) {
+			s.push(p);
+			p = p-&gt;left;
+		}
+		else {
+			temp = s.top();
+			s.pop();
+			cout &lt;&lt; temp-&gt;data &lt;&lt; &quot;-&gt;&quot;;
+			p = temp-&gt;right;
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></li> <li><p>后序非递归遍历：</p> <p>​	后序遍历的难点在于：需要判断上次访问的节点是位于左子树，还是右子树。若是位于左子树，则需跳过根节点，先进入右子树，再回头访问根节点；若是位于右子树，则直接访问根节点。这里用到一个指针pLastVisit记录上次访问过的结点,节点能被访问的前提就是:无右子树或右子树已被访问过</p></li></ol> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//后续非递归遍历
+void PostOrderTraverse(BTNode* root)
+{
+	if (root == NULL)
+		return;
+
+	BTNode* pcur = root;
+	BTNode* pLastVisit = NULL;
+	//pCur:当前访问节点，pLastVisit:上次访问节点
+	stack&lt;BTNode*&gt;s;
+
+	//先把pCur移动到左子树最下边
+	while (pcur) {
+		s.push(pcur);
+		pcur = pcur-&gt;left;
+	}
+
+	while (!s.empty()) {
+
+		//走到这里，pCur都是空，并已经遍历到左子树底端
+		BTNode* pcur = s.top();
+		s.pop();
+
+		//一个根节点被访问的前提是：无右子树或右子树已被访问过
+		if (pcur-&gt;right == NULL || pLastVisit == pcur-&gt;right) {
+			cout &lt;&lt; pcur-&gt;data &lt;&lt; &quot;-&gt;&quot;;
+			pLastVisit = pcur;
+		}
+		else {
+			//走到这根结点不配出栈，重新入栈
+			s.push(pcur);
+
+			//进入右子树，且可肯定右子树一定不为空
+			pcur = pcur-&gt;right;
+
+			//访问一个新结点，就遍历到左子树左下底
+			while(pcur) {
+				s.push(pcur);
+				pcur=pcur-&gt;left;
+			}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h4 id="层次遍历-2"><a href="#层次遍历-2" class="header-anchor">#</a> 层次遍历</h4> <p>所谓层序遍历，就是自上而下，自左向右逐层访问的过程：</p> <img src="/assets/img/image_20231216151218976.9197104d.png" alt="image_20231216151218976" style="zoom:33%;"> <p>层序遍历核心思路就是上一层带下一层，调用队列预先写好的函数辅助实现层序遍历。具体来说就是将结点自上到下逐层放入队列中，每次队列出一个节点，直到最后队列为空，遍历完成。代码如下：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>void LevelOrder(BinaryTreeNode* root)
+{
+	Queue BTree;//层序遍历的队列
+	QueueInit(&amp;BTree);//队列初始化
+	if (root)QueuePush(&amp;BTree,root);//入队
+	while (!QueueEmpty(&amp;BTree))//队列空，循环终止
+	{
+		BinaryTreeNode* temp = QueueFront(&amp;BTree);
+		QueuePop(&amp;BTree);
+		cout &lt;&lt; temp-&gt;data &lt;&lt; &quot; -&gt; &quot;;
+		if (temp-&gt;left)QueuePush(&amp;BTree, temp-&gt;left);//上一层带下一层
+		if (temp-&gt;right)QueuePush(&amp;BTree, temp-&gt;right);//上一层带下一层
+	}
+	cout &lt;&lt; endl;
+	QueueDestory(&amp;BTree);//销毁队列
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="二叉树的构造"><a href="#二叉树的构造" class="header-anchor">#</a> 二叉树的构造</h3> <h4 id="先序序列构造二叉数"><a href="#先序序列构造二叉数" class="header-anchor">#</a> 先序序列构造二叉数</h4> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//根据先序遍历序列创建二叉树
+//根据数值和传入指针构建结点
+void newNode(BinaryTreeNode*&amp; newp,char data) {
+	newp = (BinaryTreeNode*)malloc(sizeof(BinaryTreeNode));
+	newp-&gt;data = data;
+	newp-&gt;left = NULL;
+	newp-&gt;right = NULL;
+}
+
+//构建二叉树，传进来的字符串：AB^DF^^^CEG^^H^^^，index初始值为0
+void createTree(BinaryTreeNode*&amp; root,string prevStr,int&amp; index) {
+	if (prevStr[index] != '^'){
+		newNode(root, prevStr[index]);
+		index++;
+		createTree(root-&gt;left, prevStr, index);
+		createTree(root-&gt;right, prevStr, index);
+	}
+	else {
+		index++;
+		return;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h4 id="后续序列构建二叉树"><a href="#后续序列构建二叉树" class="header-anchor">#</a> 后续序列构建二叉树</h4> <p>思想将后序序列倒过来，就是根-右节点-左结点，先构建右子树，再构建左子树，string下标也是倒着来</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//根据数值和传入指针构建结点
+void newNode(BinaryTreeNode*&amp; newp,char data) {
+	newp = (BinaryTreeNode*)malloc(sizeof(BinaryTreeNode));
+	newp-&gt;data = data;
+	newp-&gt;left = NULL;
+	newp-&gt;right = NULL;
+}
+//构建二叉树，传进来的字符串：AB^DF^^^CEG^^H^^^,index初始值为postStr最大下标
+void createTree2(BinaryTreeNode*&amp; root, string postStr, int&amp; index) {
+	if (postStr[index] != '^') {
+		newNode(root, postStr[index]);
+		index--;
+		createTree2(root-&gt;right, postStr, index);//先构建右子树
+		createTree2(root-&gt;left, postStr, index);
+	}
+	else {
+		index--;
+		return;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="线性二叉树"><a href="#线性二叉树" class="header-anchor">#</a> 线性二叉树</h2> <h3 id="基本定义"><a href="#基本定义" class="header-anchor">#</a> 基本定义</h3> <p>所谓线索二叉树就是将二叉链表中的空指针改为指向前趋和后继的线索。</p> <p>对于n个结点的指针，就相应的有n+1的空指针域，线索二叉树就是将这些空指针域利用起来！</p> <p>我们知道二叉树遍历次序有先序遍历，中序遍历，后序遍历，这三种遍历次序对应的输出结果分别对应先序序列，中序序列，后序序列。而线索二叉树中的前趋和后继就是指的序列中位置的前趋和后继！举例：对于如下二叉树</p> <img src="/assets/img/image_20231216151301386.210b596b.png" alt="image_20231216151301386" style="zoom:50%;"> <p>其中序输出序列为：CBEGDFA，所以对于E结点其前趋为B，后继为G。</p> <p>理解的前趋后继，下面谈谈如何将二叉树修改成线索二叉树！</p> <p>如果结点左指针为空，就将该指针指向结点在序列中的前驱。如果结点右指针为空，就将该指针指向结点在序列中的后继。</p> <p>为了弄清指针指向的时左右子树还是前驱后继，我们在结点中增加两个标志域LTag和RLag
+<img src="/assets/img/image_20231216151332135.e81f893d.png" alt="image_20231216151332135" style="zoom:50%;"></p> <ul><li>这种结点结构的构成的二叉树叫线索二叉树</li> <li>对应的存储结构叫做线索链表</li> <li>结点中指向前驱后继的指针叫做线索。</li></ul> <p>了解完线索二叉树的基本概念，来看个例子，看看其指针指向：如图（a）所示为中序线索二叉树，与其对应的中序线索链表如图（b）所示。</p> <p>其中实线为指针(指向左、右子树)，虚线为线索(指向前驱和后继)。</p> <img src="/assets/img/image_20231216151406629.a84ffde0.png" alt="image_20231216151406629" style="zoom:50%;"> <p>可以看出：线索二叉树仿照线性表的存储结构</p> <p>在二叉树的线索链表上也添加一个头节点，并令其lchild域的指针指向二叉树的根节点，令其rchild域的指针指向中序遍历时访问的最后一个节点；</p> <p>同时,令二叉树中序序列中第一个节点的lchild域指针和最后一个节点的rchild域指针均指向头节点。(中序序列第一个结点就是二叉树最左边的结点和最右边的结点)</p> <p>这好比为二叉树建立了一个双向线索链表,既可从第一个节点起顺后继进行遍历，也可从最后一个节点起顺前驱进行遍历。</p> <h3 id="构造线性二叉树"><a href="#构造线性二叉树" class="header-anchor">#</a> 构造线性二叉树</h3> <p>构造线索二叉树的过程就是将二叉链表中的空指针改为指向前趋和后继的线索的过程。也就是说二叉树线索化就是修改空指针的过程。</p> <p>由于前趋和后继只有在遍历的时候才能获得，所以按照不同的遍历次序对二叉树线索化，可以得到分别得到先序线索二叉树，中序线索二叉树，后续线索二叉树。</p> <p>在讲解构造线索二叉树前，相信二叉树的遍历大家都很清楚了，访问结点的先后顺序时不变的（框架不变）。所谓先中后遍历二叉树就是将输出语句放在不同的位置，如下：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>void prevOrder(BinaryTreeNode* root)
+{
+	if (root == NULL)
+	{
+		cout &lt;&lt; &quot;NULL-&gt;&quot;;
+		return;
+	}
+	//cout &lt;&lt; root-&gt;data &lt;&lt; &quot;-&gt;&quot;;//放在此处就是先序遍历
+	prevOrder(root-&gt;left);
+	//cout &lt;&lt; root-&gt;data &lt;&lt; &quot;-&gt;&quot;;//放在此处就是中序遍历
+	prevOrder(root-&gt;right);
+	//cout &lt;&lt; root-&gt;data &lt;&lt; &quot;-&gt;&quot;;//放在此处就是后序遍历
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>将修改空指针的操作和记录前趋节点的操作放在放在二叉树遍历的不同位置，就衍生出先序线索二叉树，中序线索二叉树，后续线索二叉树。</p> <p>为了记下遍历过程中访问结点的先后关系，便于当前节点的线索化，左指针指向前前趋，右指针指向后继。<em>设置一个指针pre始终指向刚刚访问过的结点，而p指针指向当前结点</em></p> <p>我们每次修改空指针，都改变<strong>当前节点的左指针，改变前趋（也就是prev）的右指针</strong>。这样再遍历过后除了，除了序列的最后一个节点的后继没有修改外，其余节点均被完全线索化了。来看看个图就明白了：
+<img src="https://typora-2296.oss-cn-shenzhen.aliyuncs.com/image_20221109161606056.png" alt="image_20221109161606056" style="zoom:50%;"></p> <p>记住：<strong>当前节点的左指针，改变前趋（也就是prev）的右指针</strong></p> <p>对于当前节点C而言，修改左指针，遍历一次后C成为前趋，修改前趋的右指针（C的后继），这样C的左右指针都做了修改。</p> <h4 id="中序线索二叉树的构建"><a href="#中序线索二叉树的构建" class="header-anchor">#</a> 中序线索二叉树的构建</h4> <p>在修改空指针前我们需要记下当前结点的前驱后继！所以<strong>设置一个指针<code>pre</code>v始终指向刚刚访问过的结点，而<code>p</code>指针指向当前结点</strong>，在构造中序线索二叉树前，我们先理解pre指针和p指针时如何记录当前结点和前趋的，这样能更有利于我们理解中序二叉树的构建：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化的部分代码
+void InThreading(BTNode* p,BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+		InThreading(p-&gt;left,prev);
+		prev = p;
+		InThreading(p-&gt;right,prev);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>可以看到，和遍历输出二叉链表的代码实现很像！p非空？那就递归左子树线索化，记录根结点<code>prev = p;</code>，再右子树线索化！</p> <p><code>prev</code>的初始值指向线索二叉树的头节点<code>Thrt</code>，对于中序第一个结点，它的前趋就是二叉搜索树的头节点</p> <p>上面代码，每一层递归都记录下的当前结点和上一个结点：每一层递归中当前结点为p，当前结点的前趋为prev。下一步接着加入修改空指针的操作：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+
+		InThreading(p-&gt;left, prev);
+
+		if (!p-&gt;left) {
+			p-&gt;LTag = 1;//标记p-&gt;left为左线索
+			p-&gt;left = prev;//指向前趋
+		}
+		else p-&gt;LTag = 0;//标记p-&gt;left指向左子树
+
+		if (!prev-&gt;right) {
+			prev-&gt;RTag = 1;//标记p-&gt;right为右线索
+			prev-&gt;right = p;//指向后继
+		}
+		else prev-&gt;RTag = 0;//标记p-&gt;right指向右子树
+
+		prev = p;
+
+		InThreading(p-&gt;right, prev);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>上面说过，我们每次修改空指针，都改变<strong>当前节点的左指针，改变前趋（也就是prev）的右指针</strong>。这样再遍历过后除了，除了序列的最后一个节点的后继没有修改外，其余节点均被完全线索化了。所以真正的代码实现我们还需要对序列最后一个节点的后继线索化！，下面是完整的线索化二叉树实现：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+
+		InThreading(p-&gt;left, prev);
+
+		if (!p-&gt;left) {
+			p-&gt;LTag = 1;//标记p-&gt;left为左线索
+			p-&gt;left = prev;//指向前趋
+		}
+		else p-&gt;LTag = 0;//标记p-&gt;left指向左子树
+
+		if (!prev-&gt;right) {
+			prev-&gt;RTag = 1;//标记p-&gt;right为右线索
+			prev-&gt;right = p;//指向后继
+		}
+		else prev-&gt;RTag = 0;//标记p-&gt;right指向右子树
+
+		prev = p;
+
+		InThreading(p-&gt;right, prev);
+	}
+}
+
+//中序遍历二叉树T，并将线索化，Thrt指向头节点（线索二叉树的头节点）
+void InOrderThreading(BTNode*&amp; Thrt, BTNode* root) {
+
+	Thrt = new BTNode;//建立头节点
+	Thrt-&gt;LTag = 0;//头节点有左孩子，若树非空，左孩子为树根。若树空，左孩子指向其自己。
+	Thrt-&gt;RTag = 1;//头节点右孩子指向序列最后一个节点
+	Thrt-&gt;right = Thrt;//右孩子初始化指向自己
+
+	if (!root)Thrt-&gt;left = Thrt;
+	else {
+		Thrt-&gt;left = root;
+		BTNode* prev = Thrt;//前趋节点，初始化指向头节点
+		InThreading(root, prev);
+
+		prev-&gt;right = Thrt;//递归出来prev指向序列最后一个节点,对最后一个节点序列化
+		prev-&gt;RTag = 1;
+
+		Thrt-&gt;right = prev;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><h4 id="先序线索二叉树的构建"><a href="#先序线索二叉树的构建" class="header-anchor">#</a> 先序线索二叉树的构建</h4> <p>还是一样，在修改空指针前我们需要记下当前结点的前驱后继！所以<strong>设置一个指针<code>pre</code>v始终指向刚刚访问过的结点，而<code>p</code>指针指向当前结点</strong>，在构造先序线索二叉树前，我们先理解pre指针和p指针时如何记录当前结点和前趋的，这样能更有利于我们理解先二叉树的构建：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+		prev = p;
+
+		InThreading(pleft, prev);
+		InThreading(p-&gt;right, prev);
+	}
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>可以发现和中序相比就是将<code>prev=p</code>移动的了位置</p> <p>下面就是修改空指针了，此处有点小修改，因为先序线索二叉树可能需要再访问左右子树前，修改左右指针，这直接影响我们原本遍历二叉树所以我们，先将左指针存储起来，再修改左指针：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+		BTNode* pleft = p-&gt;left;//先存储左指针，防止下面修改左指针映像二叉树遍历！
+
+		if (!p-&gt;left) {
+			p-&gt;LTag = 1;//标记p-&gt;left为左线索
+			p-&gt;left = prev;//指向前趋
+		}
+		else p-&gt;LTag = 0;//标记p-&gt;left指向左子树
+
+		if (!prev-&gt;right) {
+			prev-&gt;RTag = 1;//标记p-&gt;right为右线索
+			prev-&gt;right = p;//指向后继
+		}
+		else prev-&gt;RTag = 0;//标记p-&gt;right指向右子树
+
+		prev = p;
+
+		InThreading(pleft, prev);
+		InThreading(p-&gt;right, prev);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>和中序一样需要对序列最后一个节点序列化，完整实现如下：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+		BTNode* pleft = p-&gt;left;//用于临时存储当前节点的left，以放NULL修改后死循环！
+
+		if (!p-&gt;left) {
+			p-&gt;LTag = 1;//标记p-&gt;left为左线索
+			p-&gt;left = prev;//指向前趋
+		}
+		else p-&gt;LTag = 0;//标记p-&gt;left指向左子树
+
+		if (!prev-&gt;right) {
+			prev-&gt;RTag = 1;//标记p-&gt;right为右线索
+			prev-&gt;right = p;//指向后继
+		}
+		else prev-&gt;RTag = 0;//标记p-&gt;right指向右子树
+
+		prev = p;
+
+		InThreading(pleft, prev);
+		InThreading(p-&gt;right, prev);
+	}
+}
+
+//中序遍历二叉树T，并将线索化，Thrt指向头节点（线索二叉树的头节点）
+void InOrderThreading(BTNode*&amp; Thrt, BTNode* root) {
+
+	Thrt = new BTNode;//建立头节点
+	Thrt-&gt;LTag = 0;//头节点有左孩子，若树非空，左孩子为树根。若树空，左孩子指向其自己。
+	Thrt-&gt;RTag = 1;//头节点右孩子指向序列最后一个节点
+	Thrt-&gt;right = Thrt;//右孩子初始化指向自己
+
+	if (!root)Thrt-&gt;left = Thrt;
+	else {
+		Thrt-&gt;left = root;
+		BTNode* prev = Thrt;//前趋节点，初始化指向头节点
+		InThreading(root, prev);
+
+		prev-&gt;right = Thrt;//递归出来prev指向序列最后一个节点,对最后一个节点序列化
+		prev-&gt;RTag = 1;
+
+		Thrt-&gt;right = prev;
+	}
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h4 id="后续线索二叉树的构建"><a href="#后续线索二叉树的构建" class="header-anchor">#</a> 后续线索二叉树的构建</h4> <p>经过上面两个例子，后续线索二叉树就是将修改空指针和记录位置下移，但不同的是后续序列最后一个节点是不一定要序列化的因此还要判断，再序列化，代码实现</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//将以p为根的二叉树线索化
+void InThreading(BTNode* p, BTNode*&amp; prev) {
+	//if (!root)return;//可以写但很多余
+
+	//prev是全局定义好的变量，用于指向刚刚访问过的结点
+	if (p) {
+
+		InThreading(p-&gt;left, prev);
+
+		InThreading(p-&gt;right, prev);
+
+		if (!p-&gt;left) {
+			p-&gt;LTag = 1;//标记p-&gt;left为左线索
+			p-&gt;left = prev;//指向前趋
+		}
+		else p-&gt;LTag = 0;//标记p-&gt;left指向左子树
+
+		if (!prev-&gt;right) {
+			prev-&gt;RTag = 1;//标记p-&gt;right为右线索
+			prev-&gt;right = p;//指向后继
+		}
+		else prev-&gt;RTag = 0;//标记p-&gt;right指向右子树
+
+		prev = p;
+	}
+}
+
+//中序遍历二叉树T，并将线索化，Thrt指向头节点（线索二叉树的头节点）
+void InOrderThreading(BTNode*&amp; Thrt, BTNode* root) {
+
+	Thrt = new BTNode;//建立头节点
+	Thrt-&gt;LTag = 0;//头节点有左孩子，若树非空，左孩子为树根。若树空，左孩子指向其自己。
+	Thrt-&gt;RTag = 1;//头节点右孩子指向序列最后一个节点
+	Thrt-&gt;right = Thrt;//右孩子初始化指向自己
+
+	if (!root)Thrt-&gt;left = Thrt;
+	else {
+		Thrt-&gt;left = root;
+		BTNode* prev = Thrt;//前趋节点，初始化指向头节点
+		InThreading(root, prev);
+
+		if (!prev-&gt;right) {
+			prev-&gt;right = Thrt;//递归出来prev指向序列最后一个节点,对最后一个节点序列化
+			prev-&gt;RTag = 1;
+		}
+        else {
+			prev-&gt;RTag = 0;
+		}
+
+		Thrt-&gt;right = prev;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div><h3 id="遍历线索二叉树"><a href="#遍历线索二叉树" class="header-anchor">#</a> 遍历线索二叉树</h3> <p>我们可以直接递归遍历，根据标记判断当前节点是否有左右子树。但我们知道递归遍历二叉树时间复杂度和空间复杂度都是<code>O(N)</code>。但这样丝毫没有发挥线索二叉树的优势，线索二叉树的非递归遍历才是一大亮点！</p> <p>这里以中序线索二叉树为例，在理解中序线索二叉树非递归遍历前，先要清楚线索二叉树是如何非递归遍历的算法思路：</p> <ol><li>开始p指针指向A</li> <li>然后循环找到当前子树最左下角的节点M，并输出！</li> <li>M通过右索引访问输出N（此时循环结束，N没有右索引）</li> <li>循环结束就将指针指向该节点的右孩子（也就是新的根节点了）</li></ol> <p>下图红线是中序线索二叉树遍历输出过程，每一个红线下方的节点都是当前子树的最左下节点。把握住<strong>子树的最左下节是中序遍历的头，右线索是直接后继</strong>。</p> <img src="https://typora-2296.oss-cn-shenzhen.aliyuncs.com/image_20221109193911617.png" alt="image_20221109193911617" style="zoom:50%;"> <p>代码实现：</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>void InOrderTraverse(BTNode* T)
+{
+	BTNode* p = T-&gt;left;//线索二叉树头节点的左指针指向实际二叉树的头
+	while (p != T)
+	{
+        //1. 循环找到当前子树的左下角，开始以四字节单元访问！
+		while (p-&gt;LTag == 0)
+			p = p-&gt;left;
+		cout &lt;&lt; p-&gt;data;
+        
+        //2. 通过右索引访问直接后继
+		while (p-&gt;RTag == 1 &amp;&amp; p-&gt;right != T)
+		{
+			p = p-&gt;right;
+			cout &lt;&lt; p-&gt;data;
+		}
+        
+        //3. 四字节单元访问完，指向右孩子，寻找下一个四字节！
+		p = p-&gt;right;
+	}
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="哈夫曼树"><a href="#哈夫曼树" class="header-anchor">#</a> 哈夫曼树</h2> <h3 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h3> <ul><li>结点间路径：从一个结点到另一个结点所经历的结点和分支序列。</li> <li>结点的路径长度：从根节点到该结点的路径上分支的数目。</li> <li>结点的权：在实际应用中，人们往往会给树中的每一个结点赋予一个具有某种实际意义的数值，这个数值被称为该结点的权值。</li> <li>结点的带权路径长度：该结点的路径长度与该结点的权值的乘积。</li> <li>树的带权路径长度：树中所有叶结点的带权路径长度之和。</li></ul> <img src="/assets/img/image_20231210201214724.eb6b46ed.png" alt="image_20231210201214724" style="zoom:50%;"> <h3 id="构造哈夫曼树"><a href="#构造哈夫曼树" class="header-anchor">#</a> 构造哈夫曼树</h3> <p>给定n个权值分别为w1, w2…wn的结点，构造哈夫曼树的算法描述如下：</p> <ol><li><p>首先将这n个结点分别视作n棵仅含一个结点的二叉树，构成森林F。</p></li> <li><p>在森林中选取两棵==根结点权值最小的树==作为新结点的左、右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。</p></li> <li><p>重复选树的过程，知道森林只剩下一棵树</p> <p>下面是构建哈夫曼树的过程：</p> <img src="/assets/img/image_20231210201512060.b8cb440e.png" alt="image_20231210201512060" style="zoom:50%;"></li></ol> <h3 id="哈夫曼编码"><a href="#哈夫曼编码" class="header-anchor">#</a> 哈夫曼编码</h3> <ul><li>可变长度编码，对不同字符采用不等长的二进制位表示。</li> <li>前缀编码：没有一个编码时另一个编码的前缀</li></ul> <p><strong>用哈夫曼树得到的编码方案叫哈夫曼编码，并且哈夫曼编码时前缀编码</strong></p> <p>具体：对不同的字符赋予权值，就得到了带权的结点，相应构建哈夫曼树。每一个字符对应哈夫曼树的叶子结点，规定查找路径向左为编码1，向右为编码0。该叶子的查找路径就对应了字符的唯一编码。</p> <p>下面时哈夫曼编码的案例：可以看到同一权值的结点能构造的哈夫曼树不唯一，对应的哈夫曼编码也是不唯一的！</p> <img src="https://typora-2296.oss-cn-shenzhen.aliyuncs.com/image_20221116233626629.png" alt="img" style="zoom:50%;"> <p>对使用频率高的字符赋予较高权值，对应哈夫曼树种权值高的结点查找路径更短，相应的编码也更短，从而实现文件压缩！</p> <ul><li><p>n个权值，组成哈夫曼树节点个数：<code>2n-1</code></p></li> <li><p>哈夫曼结点类</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include &lt;iostream&gt;
+
+class HuffmanNode {
+public:
+    int weight; // 权值
+    bool flag; // 节点是否加入哈夫曼树的标志
+    HuffmanNode* parent, * lchild, * rchild; // 父节点及左右孩子节点
+
+    // 构造一个空节点
+    HuffmanNode() : weight(0), flag(false), parent(nullptr), lchild(nullptr), rchild(nullptr) {}
+
+    // 构造一个具有权值的节点
+    HuffmanNode(int weight) : weight(weight), flag(false), parent(nullptr), lchild(nullptr), rchild(nullptr) {}
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></li> <li><p>哈夫曼编码类</p></li></ul> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+class HuffmanNode {
+public:
+    int weight; // 权值
+    bool flag; // 节点是否加入哈夫曼树的标志
+    HuffmanNode* parent, * lchild, * rchild; // 父节点及左右孩子节点
+
+    // 构造一个空节点
+    HuffmanNode() : weight(0), flag(false), parent(nullptr), lchild(nullptr), rchild(nullptr) {}
+
+    // 构造一个具有权值的节点
+    HuffmanNode(int weight) : weight(weight), flag(false), parent(nullptr), lchild(nullptr), rchild(nullptr) {}
+};
+
+class HuffmanTree {
+public:
+    // 求哈夫曼编码的算法，w存放n个字符的权值(均&gt;0)
+    std::vector&lt;std::vector&lt;int&gt;&gt; huffmanCoding(const std::vector&lt;int&gt;&amp; W) {
+        int n = W.size();  // 字符个数
+        int m = 2*n -1;   //哈夫曼树的节点数
+        // 构造n个具有权值的节点
+        HuffmanNode* HN = new HuffmanNode[m];
+        int i = 0;
+        for (; i&lt;n ; i++) {
+            HN[i] = HuffmanNode(W[i]);
+        }
+        // 创建哈夫曼树
+        for (i = n;  i&lt;m ; i++) {
+            // 在HN[0...1]选择不在哈夫曼树中，且权值weight最小的两个节点min1和min2
+            HuffmanNode* min1 = selectMin(HN,i-1);
+            min1-&gt;flag = true;
+            HuffmanNode* min2 = selectMin(HN,i-1);
+            min2-&gt;flag = true;
+            // 构造 min1和min2的父节点，并修改父节点的权值
+            HN[i] = new HuffmanNode();
+            min1-&gt;parent=HN[i];
+            min2-&gt;parent=HN[i];
+            HN[i]-&gt;lchild = min1;
+            HN[i]-&gt;rchild = min2;
+            HN[i]-&gt;weight = min1-&gt;weight+min2-&gt;weight;
+        }
+        //  从叶子到根 逆向求每个字符的哈夫曼编码
+        std::vector&lt;std::vector&lt;int&gt;&gt; HuffCode(n, std::vector&lt;int&gt;(n)); // 分配n个字符编码存储空间
+        for (int j =0;j&lt;n;j++){
+            // 编码的开始位置，初始化为数组的结尾
+            int start = n-1;
+            // 从叶子节点到根，逆向求编码
+            for(HuffmanNode* c = &amp;HN[j], p=c-&gt;parent;p!=nullptr;c=p,p=p-&gt;parent){
+                if(p-&gt;lchild == c){
+                    HuffCode[j][start--]=0;
+                }else{
+                    HuffCode[j][start--]=1;
+                }
+            }
+            // 编码的开始标志为-1，编码是-1之后的01序列
+            HuffCode[j][start] = -1;
+
+        }
+
+        return HuffCode;
+    }
+
+private:
+    // 在HN[0...1]选择不在哈夫曼树中，且权值weight最小的两个节点min1和min2
+    HuffmanNode* selectMin(HuffmanNode* HN, int end) {
+        // 求 不在哈夫曼树中， weight最小值的那个节点
+        HuffmanNode* min = &amp;HN[end];
+        for (int i = 0; i &lt; end; i++) {
+            HuffmanNode* h = &amp;HN[i];
+            // 不在哈夫曼树中， weight最小值
+            if(!h-&gt;flag &amp;&amp; h-&gt;weight&lt;min-&gt;weight){
+                min = h;
+            }
+        }
+        return min;
+    }
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br></div></div><ul><li>哈夫曼编码会用类似如下格式进行存储</li></ul> <p>​	<img src="https://img-blog.csdnimg.cn/2972a158968a449f821fb3ad1bd0a815.png" alt="img" style="zoom:50%;"></p> <ul><li><p>测试类</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+class HuffmanTree {
+public:
+    std::vector&lt;std::vector&lt;int&gt;&gt; huffmanCoding(const std::vector&lt;int&gt;&amp; W) {
+        // 实现哈夫曼编码的代码...
+    }
+};
+
+int main() {
+    // 一组权值
+    std::vector&lt;int&gt; W = {6,30,8,9,15,24,4,12};
+    // 创建哈夫曼树
+    HuffmanTree tree;
+    // 求哈夫曼编码
+    std::vector&lt;std::vector&lt;int&gt;&gt; HN = tree.huffmanCoding(W);
+    // 打印编码
+    std::cout &lt;&lt; &quot;哈夫曼编码是：\n&quot;;
+    for (size_t i = 0; i &lt; HN.size(); i++) {
+        std::cout &lt;&lt; W[i] &lt;&lt; &quot; &quot;;
+        for (size_t j = 0; j &lt; HN[i].size(); j++) {
+            if (HN[i][j] == -1) {
+                for (size_t k = j + 1; k &lt; HN[i].size(); k++) {
+                    std::cout &lt;&lt; HN[i][k];
+                }
+                break;
+            }
+        }
+        std::cout &lt;&lt; &quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div></li></ul> <h2 id="并查集"><a href="#并查集" class="header-anchor">#</a> 并查集</h2> <h3 id="定义-2"><a href="#定义-2" class="header-anchor">#</a> 定义</h3> <p>并查集是一种用来管理元素分组情况的数据结构。</p> <p><strong>可以高效进行如下操作</strong></p> <ul><li><p>查询元素a和元素b 是否属于同一组。</p></li> <li><p>合并元素a和元素b 所在的组</p> <img src="https://img-blog.csdnimg.cn/20210111114543316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzg4NzQy,size_16,color_FFFFFF,t_70#pic_center" alt="分组和对应的例子" style="zoom:67%;"></li></ul> <h3 id="并查集的结构"><a href="#并查集的结构" class="header-anchor">#</a> 并查集的结构</h3> <p>并查集是<code>树形结构</code>。不过，不是二叉树。</p> <p>每个元素对应一个节点，每个组对应一颗树。</p> <p><em>在并查集中，哪个节点是哪个节点的父亲以及树的形状等信息不用关注，整体是树形结构才最重要</em></p> <h4 id="_1-初始化"><a href="#_1-初始化" class="header-anchor">#</a> 1. 初始化</h4> <img src="https://img-blog.csdnimg.cn/20210111114957669.png#pic_center" alt="初始化" style="zoom:67%;"> <h4 id="_2-合并"><a href="#_2-合并" class="header-anchor">#</a> 2. 合并</h4> <p>和下面图一样，从一个组的根向另一个组的跟连边，将两棵树变成 一颗树，也就是两个组变成一个组</p> <img src="/assets/img/image_20231210203640735.c0e38971.png" alt="image_20231210203640735" style="zoom:33%;"> <h4 id="_3-查询"><a href="#_3-查询" class="header-anchor">#</a> 3. 查询</h4> <p>为了查询两个节点是否同一组，只要沿着树向上走，查询<code>根节点是否相同</code>，根节点相同时同一组，否则不同组。如上图中 （2）（5）的根是 （1），而（7）的根是（6） 所以（2）和（5）是同一组，但是（2）和（7）不是同一组。</p> <p>代码实现</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include &lt;vector&gt;
+
+class UnionFind {
+public:
+    // 构造函数
+    UnionFind(std::vector&lt;int&gt;&amp; nums) {
+        par.resize(nums.size());
+        rank.resize(nums.size());
+        
+        for (size_t i = 0; i &lt; nums.size(); i++) {
+            par[i] = i;
+            rank[i] = 0;
+        }
+    }
+
+    // 查询树的根
+    int find(int x) {
+        if (par[x] == x) {
+            return x;
+        } else {
+            return find(par[x]);
+        }
+    }
+
+    // 查询x和y是否为同一集合
+    bool same(int x, int y) {
+        return find(x) == find(y);
+    }
+
+    // 合并x和y所属集合
+    void unite(int x, int y) {
+        x = find(x);
+        y = find(y);
+
+        if (x == y) {
+            return;
+        }
+
+        if (rank[x] &lt; rank[y]) {
+            par[x] = y;
+        } else {
+            par[y] = x;
+            if (rank[x] == rank[y]) {
+                rank[x]++;
+            }
+        }
+    }
+
+private:
+    std::vector&lt;int&gt; par;  // 父节点数组
+    std::vector&lt;int&gt; rank; // 节点的秩
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2023, 11:23:06 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/dataStructure_c/stringsArraysGenTab.html" class="prev">
+          五、串，数组，广义表
+        </a></span> <span class="next"><a href="/blogs/dataStructure_c/graph.html">
+          七、图
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树" class="sidebar-link reco-side-树" data-v-b57cc07c>树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树的定义" class="sidebar-link reco-side-树的定义" data-v-b57cc07c>树的定义</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树的相关术语" class="sidebar-link reco-side-树的相关术语" data-v-b57cc07c>树的相关术语</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树的基本性质" class="sidebar-link reco-side-树的基本性质" data-v-b57cc07c>树的基本性质</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树的基本运算" class="sidebar-link reco-side-树的基本运算" data-v-b57cc07c>树的基本运算</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树的存储结构" class="sidebar-link reco-side-树的存储结构" data-v-b57cc07c>树的存储结构</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树" class="sidebar-link reco-side-二叉树" data-v-b57cc07c>二叉树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#定义" class="sidebar-link reco-side-定义" data-v-b57cc07c>定义</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#树和二叉树的联系与区别" class="sidebar-link reco-side-树和二叉树的联系与区别" data-v-b57cc07c>树和二叉树的联系与区别</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树的基本术语" class="sidebar-link reco-side-二叉树的基本术语" data-v-b57cc07c>二叉树的基本术语</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树的分类" class="sidebar-link reco-side-二叉树的分类" data-v-b57cc07c>二叉树的分类</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树的存储结构" class="sidebar-link reco-side-二叉树的存储结构" data-v-b57cc07c>二叉树的存储结构</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树的遍历" class="sidebar-link reco-side-二叉树的遍历" data-v-b57cc07c>二叉树的遍历</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#二叉树的构造" class="sidebar-link reco-side-二叉树的构造" data-v-b57cc07c>二叉树的构造</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#线性二叉树" class="sidebar-link reco-side-线性二叉树" data-v-b57cc07c>线性二叉树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#基本定义" class="sidebar-link reco-side-基本定义" data-v-b57cc07c>基本定义</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#构造线性二叉树" class="sidebar-link reco-side-构造线性二叉树" data-v-b57cc07c>构造线性二叉树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#遍历线索二叉树" class="sidebar-link reco-side-遍历线索二叉树" data-v-b57cc07c>遍历线索二叉树</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#哈夫曼树" class="sidebar-link reco-side-哈夫曼树" data-v-b57cc07c>哈夫曼树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#基本概念" class="sidebar-link reco-side-基本概念" data-v-b57cc07c>基本概念</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#构造哈夫曼树" class="sidebar-link reco-side-构造哈夫曼树" data-v-b57cc07c>构造哈夫曼树</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#哈夫曼编码" class="sidebar-link reco-side-哈夫曼编码" data-v-b57cc07c>哈夫曼编码</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#并查集" class="sidebar-link reco-side-并查集" data-v-b57cc07c>并查集</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#定义-2" class="sidebar-link reco-side-定义-2" data-v-b57cc07c>定义</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/dataStructure_c/tree.html#并查集的结构" class="sidebar-link reco-side-并查集的结构" data-v-b57cc07c>并查集的结构</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.d8a7e94a.js" defer></script><script src="/assets/js/4.6227a905.js" defer></script><script src="/assets/js/1.9ff3b7f0.js" defer></script><script src="/assets/js/5.6c0e3380.js" defer></script>
+  </body>
+</html>
